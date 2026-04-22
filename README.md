@@ -79,7 +79,7 @@ export TENCENTCLOUD_SECRET_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 无需手动执行，crontab 每天会自动调用。如需手动触发：
 
 ```bash
-~/.tcssl_deploy/tcssl_deploy.sh --cron -q
+~/.tcssl_deploy/tcssl_deploy.sh --cron
 ```
 
 ## 命令行参数
@@ -134,7 +134,7 @@ export TENCENTCLOUD_SECRET_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 首次手动部署成功后，脚本会自动检查并添加 crontab 任务：
 
 ```cron
-0 2 * * * /path/to/tcssl_deploy/tcssl_deploy.sh --cron -q >> /var/log/tcssl_deploy_cron.log 2>&1
+0 2 * * * /path/to/tcssl_deploy/tcssl_deploy.sh --cron >> /var/log/tcssl_deploy_cron.log 2>&1
 ```
 
 ### 查看日志

@@ -550,7 +550,7 @@ setup_crontab() {
     local script_path
     script_path=$(readlink -f "$0")
 
-    local cron_line="0 2 * * * ${script_path} --cron -q >> /var/log/tcssl_deploy_cron.log 2>&1"
+    local cron_line="0 2 * * * ${script_path} --cron >> /var/log/tcssl_deploy_cron.log 2>&1"
 
     # 检查是否已存在相同任务
     local current_crontab
