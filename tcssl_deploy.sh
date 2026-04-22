@@ -647,6 +647,12 @@ sync_certificate() {
 
 # 计划任务模式：读取配置批量处理
 run_cron_mode() {
+    # 输出时间戳（含时区）
+    echo "========================================"
+    echo "TcSslDeploy Cron 执行时间: $(date '+%Y-%m-%d %H:%M:%S %Z')"
+    echo "========================================"
+    echo
+
     local config_json
     config_json=$(load_config)
 
