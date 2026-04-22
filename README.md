@@ -26,9 +26,8 @@
 ## 快速安装
 
 ```bash
-git clone https://github.com/WuKrCoding/TcSslDeploy.git tcssl_deploy
-cd tcssl_deploy
-chmod +x tcssl_deploy.sh
+git clone https://github.com/WuKrCoding/TcSslDeploy.git ~/.tcssl_deploy
+chmod +x ~/.tcssl_deploy/tcssl_deploy.sh
 ```
 
 ## 快速开始
@@ -36,7 +35,7 @@ chmod +x tcssl_deploy.sh
 ### 1. 配置腾讯云 API 密钥
 
 ```bash
-export TENCENTCLOUD_SECRET_ID="AKIDxxxxxxxxxxxxxxxx"
+export TENCENTCLOUD_SECRET_ID="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 export TENCENTCLOUD_SECRET_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
@@ -45,7 +44,7 @@ export TENCENTCLOUD_SECRET_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ### 2. 测试密钥是否可用
 
 ```bash
-./tcssl_deploy.sh -t
+~/.tcssl_deploy/tcssl_deploy.sh -t
 ```
 
 ### 3. 首次部署证书
@@ -53,7 +52,7 @@ export TENCENTCLOUD_SECRET_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 本地证书文件可以不存在，但必须指定 `-d` 域名：
 
 ```bash
-./tcssl_deploy.sh \
+~/.tcssl_deploy/tcssl_deploy.sh \
   -c /etc/nginx/ssl/example.com.crt \
   -k /etc/nginx/ssl/example.com.key \
   -d example.com \
@@ -69,7 +68,7 @@ export TENCENTCLOUD_SECRET_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 为其他域名添加证书，配置会**增量追加**到 `config.json`：
 
 ```bash
-./tcssl_deploy.sh \
+~/.tcssl_deploy/tcssl_deploy.sh \
   -c /etc/nginx/ssl/another.com.crt \
   -k /etc/nginx/ssl/another.com.key \
   -d another.com
@@ -80,7 +79,7 @@ export TENCENTCLOUD_SECRET_KEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 无需手动执行，crontab 每天会自动调用。如需手动触发：
 
 ```bash
-./tcssl_deploy.sh --cron -q
+~/.tcssl_deploy/tcssl_deploy.sh --cron -q
 ```
 
 ## 命令行参数
